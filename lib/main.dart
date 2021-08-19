@@ -50,9 +50,15 @@ class _ChoiceAppState extends State<ChoiceApp> {
             padding: const EdgeInsets.all(8.0),
             child: Buttons(
               onPress: () {
-                setState(() {
-                  choiceBrain.nextchoice(1);
+                WidgetsBinding.instance!.addPostFrameCallback((_) {
+                  // Add Your Code here.
+                  setState(() {
+                    choiceBrain.nextchoice(1);
+                  });
                 });
+                // setState(() {
+                //   choiceBrain.nextchoice(1);
+                // });
               },
               text: choiceBrain.getChoice1(),
               buttoncolor: Colors.red,
@@ -62,9 +68,14 @@ class _ChoiceAppState extends State<ChoiceApp> {
             padding: const EdgeInsets.all(8.0),
             child: Buttons(
               onPress: () {
-                setState(() {
-                  choiceBrain.nextchoice(2);
+                WidgetsBinding.instance!.addPostFrameCallback((_) {
+                  setState(() {
+                    choiceBrain.nextchoice(2);
+                  });
                 });
+                // setState(() {
+                //   choiceBrain.nextchoice(2);
+                // });
               },
               text: choiceBrain.getChoice2(),
               buttoncolor: Colors.red,
